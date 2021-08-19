@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['running-ui.py'],
-             pathex=['\\\\vmware-host\\Shared Folders\\Desktop\\Running-Key-Cipher'],
+             pathex=['C:\\Users\\FlameWarlock\\Downloads\\running-key-cipher-main\\running-key-cipher'],
              binaries=[],
              datas=[],
              hiddenimports=[],
