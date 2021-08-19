@@ -1,0 +1,1 @@
+pyinstaller -F running-ui.py
