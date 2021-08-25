@@ -1,1 +1,2 @@
-pyinstaller -F running-ui.py
+pip install -r requirements.txt
+@pause
