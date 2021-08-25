@@ -2,7 +2,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import webbrowser
 
-
+# pyinstaller -F <name>
+# pyuic5 -x tool.ui -o running-ui_v2.0.py
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -13,7 +14,7 @@ class Ui_MainWindow(object):
         self.lbTitle = QtWidgets.QLabel(self.centralwidget)
         self.lbTitle.setGeometry(QtCore.QRect(280, 10, 431, 51))
         self.lbTitle.setMaximumSize(QtCore.QSize(16777214, 16777214))
-       
+        # self.centralwidget.setStyleSheet('background-color: rgb(50,50,50)')
         font = QtGui.QFont()
         font.setPointSize(25)
         font.setBold(True)
