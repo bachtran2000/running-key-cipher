@@ -156,12 +156,15 @@ class Ui_MainWindow(object):
 
         # Xet empty
         if not key  and not plaintext :
+            self.lbInput.setText('Input: ')
             self.lbOutput.setText("Warning")
             self.txtOutput.setText("Input and Key can't empty!")
         elif key == "" and plaintext != "":
+            self.lbInput.setText('Input: ')
             self.lbOutput.setText("Warning")
             self.txtOutput.setText("Key can't empty!")
         elif plaintext == "" and key!="":
+            self.lbInput.setText('Input: ')
             self.lbOutput.setText("Warning")
             self.txtOutput.setText("Input can't empty!")
 
@@ -191,18 +194,23 @@ class Ui_MainWindow(object):
 
         cipher = cipher.replace(" ","").lower().strip(" ")
         key = key.replace(" ","").lower().strip(" ")
-        flag=0
+        flag = 0
 
-        if not key  and not plaintext :
+        if not key and not cipher :
+            self.lbInput.setText('Input: ')
             self.lbOutput.setText("Warning")
             self.txtOutput.setText("Input and Key can't empty!")
-        elif key == "" and plaintext != "":
+            
+        elif key == "" and cipher != "":
+            self.lbInput.setText('Input: ')
             self.lbOutput.setText("Warning")
             self.txtOutput.setText("Key can't empty!")
-        elif plaintext == "" and key!="":
+            
+        elif cipher == "" and key!="":
+            self.lbInput.setText('Input: ')
             self.lbOutput.setText("Warning")
             self.txtOutput.setText("Input can't empty!")
-
+            
         # trường hợp mã hoá bằng với key
         elif len(cipher) == len(key):
             # Việc giải mã đơn giản, không cần phải chèn plain text đã giải được vào key
