@@ -1,5 +1,6 @@
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets 
+from PyQt5.QtWidgets import QMessageBox
 import webbrowser
 
 # pyinstaller -F <name>
@@ -152,9 +153,20 @@ class Ui_MainWindow(object):
         # Xử lý chuỗi ban đầu
         key = key.replace(" ","").lower().strip(" ")
         plaintext = plaintext.replace(" ","").lower().strip(" ")
-        
+
+        # Xet empty
+        if not key  and not plaintext :
+            self.lbOutput.setText("Warning")
+            self.txtOutput.setText("Input and Key can't empty!")
+        elif key == "" and plaintext != "":
+            self.lbOutput.setText("Warning")
+            self.txtOutput.setText("Key can't empty!")
+        elif plaintext == "" and key!="":
+            self.lbOutput.setText("Warning")
+            self.txtOutput.setText("Input can't empty!")
+
         # Xét trường hợp cho phép nếu chiều dài chuỗi lớn hơn hoặc bằng chiều dài key
-        if len(plaintext)>=len(key):
+        elif len(plaintext)>=len(key):
             # Tạo ra khoá hoàn chỉnh
             for i in plaintext:
                 if len(key) < len(plaintext):
@@ -180,8 +192,19 @@ class Ui_MainWindow(object):
         cipher = cipher.replace(" ","").lower().strip(" ")
         key = key.replace(" ","").lower().strip(" ")
         flag=0
+
+        if not key  and not plaintext :
+            self.lbOutput.setText("Warning")
+            self.txtOutput.setText("Input and Key can't empty!")
+        elif key == "" and plaintext != "":
+            self.lbOutput.setText("Warning")
+            self.txtOutput.setText("Key can't empty!")
+        elif plaintext == "" and key!="":
+            self.lbOutput.setText("Warning")
+            self.txtOutput.setText("Input can't empty!")
+
         # trường hợp mã hoá bằng với key
-        if len(cipher) == len(key):
+        elif len(cipher) == len(key):
             # Việc giải mã đơn giản, không cần phải chèn plain text đã giải được vào key
             for i in range(0,len(key)):
                 pos = (alphabet.find(cipher[i])-alphabet.find(key[i])%26)

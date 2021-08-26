@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['running-ui_v2.0.py'],
-             pathex=['/Users/barttran/Desktop/Running-Key-Cipher'],
+             pathex=['\\\\vmware-host\\Shared Folders\\Desktop\\Running-Key-Cipher'],
              binaries=[],
              datas=[],
              hiddenimports=[],
